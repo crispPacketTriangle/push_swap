@@ -6,7 +6,7 @@
 /*   By: lworden <lworden@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:53:24 by lworden           #+#    #+#             */
-/*   Updated: 2024/04/21 00:18:20 by lworden          ###   ########.fr       */
+/*   Updated: 2024/04/21 00:32:32 by lworden          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void	sa(t_stack *ab, int n)
 		temp = ab->a[ab->a_len - 1];
 		ab->a[ab->a_len - 1] = ab->a[ab->a_len - 2];
 		ab->a[ab->a_len - 2] = temp;
+		// temp = ab->a[0];
+		// ab->a[0] = ab->a[1];
+		// ab->a[1] = temp;
 	}
 	if (n)
 		printf("sa\n");
@@ -38,6 +41,9 @@ void	sb(t_stack *ab, int n)
 		temp = ab->b[ab->b_len - 1];
 		ab->b[ab->b_len - 1] = ab->b[ab->b_len - 2];
 		ab->b[ab->b_len - 2] = temp;
+		// temp = ab->b[0];
+		// ab->b[0] = ab->b[1];
+		// ab->b[1] = temp;
 	}
 	if (n)
 		printf("sb\n");
@@ -59,8 +65,8 @@ void	pa(t_stack *ab)
 	if (ab->b_len > 0)
 	{
 		ab->a[ab->a_len] = ab->b[ab->b_len - 1];
-		ab->a_len++;
-		ab->b_len--;
+		ab->a_len--;
+		ab->b_len++;
 	}
 	printf("pa\n");
 	ab->t_count++;
@@ -72,8 +78,8 @@ void	pb(t_stack *ab)
 	if (ab->a_len > 0)
 	{
 		ab->b[ab->b_len] = ab->a[ab->a_len - 1];
-		ab->b_len++;
-		ab->a_len--;
+		ab->b_len--;
+		ab->a_len++;
 	}
 	printf("pb\n");
 	ab->t_count++;
