@@ -24,7 +24,7 @@ void	sa(t_stack *ab, int n)
 		ab->a[ab->a_len - 2] = temp;
 	}
 	if (n)
-		printf("sa\n");
+		ft_printf("sa\n");
 	ab->t_count++;
 }
 
@@ -40,7 +40,7 @@ void	sb(t_stack *ab, int n)
 		ab->b[ab->b_len - 2] = temp;
 	}
 	if (n)
-		printf("sb\n");
+		ft_printf("sb\n");
 	ab->t_count++;
 }
 
@@ -62,7 +62,7 @@ void	pa(t_stack *ab)
 		ab->a_len++;
 		ab->b_len--;
 	}
-	printf("pa\n");
+	ft_printf("pa\n");
 	ab->t_count++;
 }
 
@@ -75,6 +75,6 @@ void	pb(t_stack *ab)
 		ab->b_len++;
 		ab->a_len--;
 	}
-	printf("pb\n");
+	ft_printf("pb\n");
 	ab->t_count++;
 }

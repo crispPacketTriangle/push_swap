@@ -36,7 +36,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	ord_stack(ab);
-	printresults(ab);
+	//printresults(ab);
 	free_arrs(argc, ab);
 }
 

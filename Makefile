@@ -1,6 +1,5 @@
 CC=cc
-#CFLAGS=-Wall -Werror -Wextra
-# remember to include the flags when compiling after $(CC) ..
+FLAGS=-Wall -Werror -Wextra
 EXT_PATHS=-I ./include/ -L ./lib/ -lft
 
 NAME=push_swap
@@ -13,7 +12,7 @@ OBJS= $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		$(CC) -o $(NAME) $(OBJS) $(EXT_PATHS)
+		$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(EXT_PATHS)
 
 clean:
 		rm -rf $(OBJS)

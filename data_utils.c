@@ -34,6 +34,7 @@ int	init_stack(t_stack *ab, int argc, char *argv[])
 		if (chk_mx > 2147483647 || chk_mx < -2147483648)
 			return (1);
 		ab->a[ab->a_len - 1 - i] = chk_mx;
+		//ab->a[i] = chk_mx;
 		i++;
 	}
 	if (numbs_repeat(ab->a, ab->a_len))

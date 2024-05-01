@@ -29,7 +29,7 @@ void	ra(t_stack *ab, int n)
 	}
 	ab->a[0] = temp;
 	if (n)
-		printf("ra\n");
+		ft_printf("ra\n");
 	ab->t_count++;
 }
 
@@ -49,7 +49,7 @@ void	rb(t_stack *ab, int n)
 	}
 	ab->b[0] = temp;
 	if (n)
-		printf("rb\n");
+		ft_printf("rb\n");
 	ab->t_count++;
 }
 
@@ -57,6 +57,6 @@ void	rr(t_stack *ab)
 {
 	ra(ab, 0);
 	rb(ab, 0);
-	printf("rr\n");
+	ft_printf("rr\n");
 	ab->t_count--;
 }
