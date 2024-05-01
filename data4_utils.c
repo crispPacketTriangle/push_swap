@@ -72,15 +72,11 @@ void	pop_max(t_stack *ab)
 	while (i < ab->b_len)
 	{
 		if (ab->b[i] > val)
-		{
 			val = ab->b[i];
-		}
 		i++;
 	}
 	while (ab->b[ab->b_len - 1] != val)
-	{
 		rb(ab, 1);
-	}
 	pa(ab);
 }
 
@@ -95,9 +91,7 @@ int	min(int *arr, int len)
 	while (i < len)
 	{
 		if (arr[i] < val)
-		{
 			val = arr[i];
-		}
 		i++;
 	}
 	return (val);

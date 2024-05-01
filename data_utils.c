@@ -14,9 +14,6 @@
 
 int	init_stack(t_stack *ab, int argc, char *argv[])
 {
-	int			i;
-	//long long	chk_mx;
-
 	parse_args(ab, argc, argv);
 	if (args_valid_num(ab->numbs))
 		return (1);
@@ -31,15 +28,6 @@ int	init_stack(t_stack *ab, int argc, char *argv[])
 		return (1);
 	if (stack_ins(ab))
 		return (1);
-	// i = 0;
-	// while (i < ab->a_len)
-	// {
-	// 	chk_mx = mxi_atoi(ab->numbs[i]);
-	// 	if (chk_mx > 2147483647 || chk_mx < -2147483648)
-	// 		return (1);
-	// 	ab->a[ab->a_len - 1 - i] = chk_mx;
-	// 	i++;
-	// }
 	if (numbs_repeat(ab->a, ab->a_len))
 		return (1);
 	return (0);

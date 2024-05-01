@@ -63,8 +63,6 @@ void	order(t_stack *ab)
 		if (ab->a[ab->a_len - 1] <= med)
 			pb(ab);
 		else
-		{
 			ra(ab, 1);
-		}
 	}
 }
