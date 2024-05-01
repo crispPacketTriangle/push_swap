@@ -36,7 +36,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 	ord_stack(ab);
-	//printresults(ab);
 	free_arrs(argc, ab);
 }
 
@@ -74,8 +73,6 @@ void	set_ab_null(t_stack *ab)
 	ab->b = NULL;
 }
 
-// remember to free everything when returning with errors
-// perhaps free_err() func
 void	free_arrs(int argc, t_stack *ab)
 {
 	int	i;
@@ -94,36 +91,52 @@ void	free_arrs(int argc, t_stack *ab)
 	free(ab->b);
 }
 
-void	prnt_arr(t_stack *ab)
+int	stack_ins(t_stack *ab)
 {
 	int	i;
+	long long	chk_mx;
 
-	ft_printf("a:\n");
 	i = 0;
 	while (i < ab->a_len)
 	{
-		ft_printf(" %d -", ab->a[i]);
+		chk_mx = mxi_atoi(ab->numbs[i]);
+		if (chk_mx > 2147483647 || chk_mx < -2147483648)
+			return (1);
+		ab->a[ab->a_len - 1 - i] = chk_mx;
 		i++;
 	}
-	ft_printf("\nb:\n");
-	i = 0;
-	while (i < ab->b_len)
-	{
-		ft_printf(" %d -", ab->b[i]);
-		i++;
-	}
-	ft_printf("\n");
+	return (0);
 }
+// void	prnt_arr(t_stack *ab)
+// {
+// 	int	i;
+//
+// 	ft_printf("a:\n");
+// 	i = 0;
+// 	while (i < ab->a_len)
+// 	{
+// 		ft_printf(" %d -", ab->a[i]);
+// 		i++;
+// 	}
+// 	ft_printf("\nb:\n");
+// 	i = 0;
+// 	while (i < ab->b_len)
+// 	{
+// 		ft_printf(" %d -", ab->b[i]);
+// 		i++;
+// 	}
+// 	ft_printf("\n");
+// }
 
-void	printresults(t_stack *ab)
-{
-	ft_printf("----------------result--------------\n");
-	prnt_arr(ab);
-	//ft_printf("\n");
-	//ft_printf("n ops: %d\n", ab->t_count);
-	if (is_ord(ab->a, ab->a_len))
-		ft_printf("yes\n");
-	else
-		ft_printf("no\n");
-	ft_printf("------------------------------------\n");
-}
+// void	printresults(t_stack *ab)
+// {
+// 	ft_printf("----------------result--------------\n");
+// 	prnt_arr(ab);
+// 	//ft_printf("\n");
+// 	//ft_printf("n ops: %d\n", ab->t_count);
+// 	if (is_ord(ab->a, ab->a_len))
+// 		ft_printf("yes\n");
+// 	else
+// 		ft_printf("no\n");
+// 	ft_printf("------------------------------------\n");
+// }

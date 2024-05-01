@@ -51,6 +51,7 @@ typedef struct s_stack
 long long	mxi_atoi(const char *nptr);
 int			is_ord(int *arr, int len);
 int			init_stack(t_stack *ab, int argc, char *argv[]);
+int			stack_ins(t_stack *ab);
 int			args_valid_num(char **argv);
 int			ord_stack(t_stack *ab);
 int			numbs_repeat(int *a, int len);
