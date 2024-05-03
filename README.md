@@ -26,7 +26,7 @@ My solution is implemented in four stages.
 
 1. Check if the stack A is already ordered.
 2. If stack A < 25 elements push all but 3 (including max element) to B.  Sort 3 elements left in A.
-    Else, push elements less than median in A, to B, or rotate A if over median while stack A bigger than stack B. Repeating until A is empty.
+    Else, push elements less than median in A, to B, or rotate A if over median, while stack A larger than len stack A / 2. Repeating until A is empty.
 4. Push largest element back to A.
 3. While B > 0 insert elements from B to A with the optimal (minimal) number of moves.
 
